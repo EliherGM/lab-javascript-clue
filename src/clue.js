@@ -61,21 +61,118 @@ const suspectsArray = [
 
 // Rooms Array
 
-const roomsArray = [];
+const roomsArray = [
+  {
+    name: 'rope',
+    weight: 10
+  },
+  {
+    name: 'knife',
+    weight: 8
+  },
+  {
+    name: 'candlestick',
+    weight: 2
+  },
+  {
+    name: 'dumbbell',
+    weight: 30
+  },
+  {
+    name: 'poison',
+    weight: 2
+  },
+  {
+    name: 'axe',
+    weight: 15
+  },
+  {
+    name: 'bat',
+    weight: 13
+  },
+  {
+    name: 'trophy',
+    weight: 25
+  },
+  {
+    name: 'pistol',
+    weight: 20
+  }
+];
 
 // Weapons Array
 
-const weaponsArray = [];
+const weaponsArray = [
+  {
+    name: 'Dining Room'
+  },
+  {
+    name: 'Conservatory'
+  },
+  {
+    name: 'Kitchen'
+  },
+  {
+    name: 'Study'
+  },
+  {
+    name: 'Library'
+  },
+  {
+    name: 'Billiard Room'
+  },
+  {
+    name: 'Lounge'
+  },
+  {
+    name: 'Ballroom'
+  },
+  {
+    name: 'Hall'
+  },
+  {
+    name: 'Spa'
+  },
+  {
+    name: 'Living Room'
+  },
+  {
+    name: 'Observatory'
+  },
+  {
+    name: 'Theater'
+  },
+  {
+    name: 'Guest House'
+  },
+  {
+    name: 'Patio'
+  }
+];
 
 
 // ITERATION 2
 
-function selectRandom() {}
+function selectRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
 
-function pickMystery() {}
+function pickMystery() {
+  let suspect = selectRandom(suspectsArray)
+  let weapon = selectRandom(weaponsArray)
+  let room = selectRandom(roomsArray)
+
+  return {suspect, weapon, room}
+}
 
 
 // ITERATION 3
 
-function revealMystery() {}
+function revealMystery(envelope) {
+  const suspect = envelope.suspect;
+  const weapon = envelope.weapon.name;
+  const room = envelope.room.name;
+
+  return `${suspect.firstName} ${suspect.lastName} killed Mr. Boddy using the ${weapon} in the ${room}!`
+}
 
